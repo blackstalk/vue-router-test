@@ -1,9 +1,15 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <section>
+    <nav>
+      <router-link :to="{ name: 'home' }">Home</router-link> |
+      <router-link :to="{ name: 'todo' }">ToDo</router-link> |
+      <router-link :to="{ name: 'products' }">Products</router-link>
+    </nav>
+    <div class="body">
+      <router-view />
+    </div>
+    <footer>This is a footer</footer>
+  </section>
 </template>
 
 <style>
@@ -13,6 +19,30 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+
+section {
+  display: flex;
+  flex-flow: column;
+  height: 100vh;
+  position: relative;
+}
+
+.body {
+  flex: 2;
+  background: gold;
+  overflow: auto;
+}
+
+footer {
+  width: 100%;
+  background-color: #2c3e50;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+
 }
 
 nav {
