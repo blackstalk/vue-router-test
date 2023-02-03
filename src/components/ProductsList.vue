@@ -3,7 +3,7 @@
         <li>
             <h3>{{ product.title }}</h3>
             <p>{{ product.description }}</p>
-            <img v-bind:src="product.thumbnail" />
+            <img v-bind:class="'image'" v-bind:src="product.thumbnail" />
             <hr />
         </li>
     </ul>
@@ -28,3 +28,17 @@ export default {
     },
 }
 </script>
+
+<style scoped>
+.image {
+    max-width: 200px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    clear: both;
+}
+</style>
