@@ -1,6 +1,11 @@
 <template>
     <ul v-for="product in products">
-        <li>{{ product.title }}</li>
+        <li>
+            <h3>{{ product.title }}</h3>
+            <p>{{ product.description }}</p>
+            <img v-bind:src="product.thumbnail" />
+            <hr />
+        </li>
     </ul>
 </template>
 
